@@ -250,7 +250,7 @@ const commands = {
     
     about: "Final year CSE student. Passionate about <span class='t-string'>Deep Learning</span> and creating <span class='t-function'>Trusted Datasets</span> for research.",
     
-    skills: "['Python', 'TensorFlow', 'Java', 'MySQL', 'MongoDB', 'Data Analysis','C/C++', 'php','HTML/CSS']",
+    skills: "['Python', 'TensorFlow', 'Java', 'MySQL', 'MongoDB', 'Data Analysis','C/C++', 'php','HTML/CSS','js']",
     
     projects: "Featured: <span class='t-function'>Deepfake Detection Model</span> (91% Accuracy). Check the Projects section for more!",
     
@@ -301,5 +301,6 @@ if (terminalInput) {
         terminalInput.focus();
     });
 }
+
 
 
