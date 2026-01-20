@@ -243,7 +243,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 0; /* Puts it behind everything */
+    z-index: 9999; /* Puts it behind everything */
     background-color: transparent; /* Let body background show through */
     pointer-events: none;
 }
@@ -1326,5 +1326,6 @@ section {
         font-size: 0.9rem;
     }
 }
+
 
 
