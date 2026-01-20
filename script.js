@@ -28,7 +28,98 @@ function updateThemeIcon(theme) {
 themeToggle.addEventListener('click', (e) => {
     e.stopPropagation();
 });
+// --- Neural Network Particle Effect ---
+// Only load if the div exists
+if (document.getElementById('particles-js')) {
+    
+    // Determine color based on current theme for initial load
+    const isDark = document.body.classList.contains('dark-mode') || 
+                   document.documentElement.getAttribute('data-theme') === 'dark';
+    const particleColor = isDark ? "#4ade80" : "#2c5f53"; // Bright green for dark, Dark green for light
 
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 60, // Number of nodes
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": particleColor // Dynamic color
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                }
+            },
+            "opacity": {
+                "value": 0.3, // Subtle opacity
+                "random": false,
+                "anim": {
+                    "enable": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false
+                }
+            },
+            "line_linked": {
+                "enable": true, // THIS MAKES THE NEURAL NET LOOK
+                "distance": 150,
+                "color": particleColor,
+                "opacity": 0.2,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2, // Slow floating movement
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab" // Connects mouse to nearby nodes
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 0.5
+                    }
+                },
+                "push": {
+                    "particles_nb": 4
+                }
+            }
+        },
+        "retina_detect": true
+    });
+}
 // --- Mobile Menu ---
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -157,7 +248,7 @@ const terminalBody = document.getElementById('terminal-body');
 const commands = {
     help: "Available commands: <span class='t-keyword'>about</span>, <span class='t-keyword'>skills</span>, <span class='t-keyword'>projects</span>, <span class='t-keyword'>contact</span>, <span class='t-keyword'>clear</span>",
     
-    about: "Final year CSE student. Passionate about <span class='t-string'>Deep Learning</span>, Data Analysis, and building intelligent systems.",
+    about: "Final year CSE student. Passionate about <span class='t-string'>Deep Learning</span> and creating <span class='t-function'>Trusted Datasets</span> for research.",
     
     skills: "['Python', 'TensorFlow', 'Java', 'MySQL', 'MongoDB', 'Data Analysis']",
     
@@ -210,3 +301,4 @@ if (terminalInput) {
         terminalInput.focus();
     });
 }
+
