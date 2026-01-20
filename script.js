@@ -28,68 +28,48 @@ function updateThemeIcon(theme) {
 themeToggle.addEventListener('click', (e) => {
     e.stopPropagation();
 });
-// --- Neural Network Particle Effect ---
-// Only load if the div exists
-if (document.getElementById('particles-js')) {
-    
-    // Determine color based on current theme for initial load
-    const isDark = document.body.classList.contains('dark-mode') || 
-                   document.documentElement.getAttribute('data-theme') === 'dark';
-    const particleColor = isDark ? "#4ade80" : "#2c5f53"; // Bright green for dark, Dark green for light
+// --- Neural Network Particle Effect (Fixed) ---
+const particlesContainer = document.getElementById('particles-js');
 
+if (particlesContainer) {
     particlesJS("particles-js", {
         "particles": {
             "number": {
-                "value": 60, // Number of nodes
+                "value": 80,
                 "density": {
                     "enable": true,
                     "value_area": 800
                 }
             },
             "color": {
-                "value": particleColor // Dynamic color
+                "value": "#aaaaaa" // Gray color - Visible on both Dark & Light modes
             },
             "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                }
+                "type": "circle"
             },
             "opacity": {
-                "value": 0.3, // Subtle opacity
-                "random": false,
-                "anim": {
-                    "enable": false
-                }
+                "value": 0.5,
+                "random": false
             },
             "size": {
                 "value": 3,
-                "random": true,
-                "anim": {
-                    "enable": false
-                }
+                "random": true
             },
             "line_linked": {
-                "enable": true, // THIS MAKES THE NEURAL NET LOOK
+                "enable": true,
                 "distance": 150,
-                "color": particleColor,
-                "opacity": 0.2,
+                "color": "#aaaaaa", // Gray lines
+                "opacity": 0.4,
                 "width": 1
             },
             "move": {
                 "enable": true,
-                "speed": 2, // Slow floating movement
+                "speed": 2,
                 "direction": "none",
                 "random": false,
                 "straight": false,
                 "out_mode": "out",
-                "bounce": false,
-                "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
+                "bounce": false
             }
         },
         "interactivity": {
@@ -97,7 +77,7 @@ if (document.getElementById('particles-js')) {
             "events": {
                 "onhover": {
                     "enable": true,
-                    "mode": "grab" // Connects mouse to nearby nodes
+                    "mode": "grab"
                 },
                 "onclick": {
                     "enable": true,
@@ -109,11 +89,8 @@ if (document.getElementById('particles-js')) {
                 "grab": {
                     "distance": 140,
                     "line_linked": {
-                        "opacity": 0.5
+                        "opacity": 1
                     }
-                },
-                "push": {
-                    "particles_nb": 4
                 }
             }
         },
@@ -301,6 +278,7 @@ if (terminalInput) {
         terminalInput.focus();
     });
 }
+
 
 
 
