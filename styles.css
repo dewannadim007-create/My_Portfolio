@@ -243,9 +243,14 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 9999; /* Puts it behind everything */
-    background-color: transparent; /* Let body background show through */
-    pointer-events: none;
+    z-index: 999; /* High number forces it to the front */
+    background-color: transparent;
+    pointer-events: none; /* Allows clicks to pass through to buttons */
+}
+
+/* Add this to prevent canvas scrollbars */
+#particles-js canvas {
+    display: block;
 }
 /* Home Section - Two Column Layout */
 .home {
@@ -1326,6 +1331,7 @@ section {
         font-size: 0.9rem;
     }
 }
+
 
 
 
