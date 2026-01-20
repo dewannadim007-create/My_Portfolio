@@ -243,8 +243,9 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1; /* Puts it behind everything */
+    z-index: 0; /* Puts it behind everything */
     background-color: transparent; /* Let body background show through */
+    pointer-events: none;
 }
 /* Home Section - Two Column Layout */
 .home {
@@ -648,6 +649,7 @@ body {
 section {
     padding: 100px 0;
     position: relative;
+    z-index: 1;
     transition: background-color 0.3s ease;
 }
 
@@ -1138,6 +1140,8 @@ section {
     padding: 2rem 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 1;
 }
 
 .footer p {
@@ -1322,4 +1326,5 @@ section {
         font-size: 0.9rem;
     }
 }
+
 
