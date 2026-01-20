@@ -2,7 +2,6 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const html = document.documentElement;
 
-// --- Theme Logic ---
 const currentTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', currentTheme);
 updateThemeIcon(currentTheme);
@@ -28,7 +27,7 @@ function updateThemeIcon(theme) {
 themeToggle.addEventListener('click', (e) => {
     e.stopPropagation();
 });
-// --- Neural Network Particle Effect (Fixed) ---
+
 const particlesContainer = document.getElementById('particles-js');
 
 if (particlesContainer) {
@@ -42,7 +41,7 @@ if (particlesContainer) {
                 }
             },
             "color": {
-                "value": "#aaaaaa" // Gray color - Visible on both Dark & Light modes
+                "value": "#aaaaaa"
             },
             "shape": {
                 "type": "circle"
@@ -58,7 +57,7 @@ if (particlesContainer) {
             "line_linked": {
                 "enable": true,
                 "distance": 150,
-                "color": "#aaaaaa", // Gray lines
+                "color": "#aaaaaa",
                 "opacity": 0.4,
                 "width": 1
             },
@@ -97,7 +96,7 @@ if (particlesContainer) {
         "retina_detect": true
     });
 }
-// --- Mobile Menu ---
+
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
@@ -113,7 +112,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// --- Navbar Scroll Effect ---
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -123,7 +121,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// --- Smooth Scroll for Anchor Links ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -138,7 +135,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// --- Active Link Highlighting ---
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -167,7 +163,6 @@ function highlightNavLink() {
 
 window.addEventListener('scroll', highlightNavLink);
 
-// --- Scroll Reveal Animation ---
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -186,7 +181,6 @@ document.querySelectorAll('.skill-card, .archive-card, .link-card, .info-item, .
     revealObserver.observe(el);
 });
 
-// Staggered animation for grids
 document.querySelectorAll('.skills-row, .archive-grid, .links-grid').forEach(container => {
     const cards = container.querySelectorAll('.skill-card, .archive-card, .link-card');
     cards.forEach((card, index) => {
@@ -194,11 +188,9 @@ document.querySelectorAll('.skills-row, .archive-grid, .links-grid').forEach(con
     });
 });
 
-// --- 3D Terminal Tilt Effect ---
 const terminal = document.querySelector('.terminal-window');
 if (terminal) {
     document.addEventListener('mousemove', (e) => {
-        // Only run if screen is wide enough (desktop)
         if (window.innerWidth > 768) {
             const rect = terminal.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
@@ -216,25 +208,17 @@ if (terminal) {
     });
 }
 
-// --- NEW: Interactive Terminal Logic ---
 const terminalInput = document.getElementById('terminal-input');
 const terminalOutput = document.getElementById('terminal-output');
 const terminalBody = document.getElementById('terminal-body');
 
-// Define the commands
 const commands = {
     help: "Available commands: <span class='t-keyword'>about</span>, <span class='t-keyword'>skills</span>, <span class='t-keyword'>projects</span>, <span class='t-keyword'>contact</span>, <span class='t-keyword'>clear</span>",
-    
     about: "Final year CSE student. Passionate about <span class='t-string'>Deep Learning</span> and creating <span class='t-function'>Trusted Datasets</span> for research.",
-    
     skills: "['Python', 'TensorFlow', 'Java', 'MySQL', 'MongoDB', 'Data Analysis','C/C++', 'php','HTML/CSS','js']",
-    
     projects: "Featured: <span class='t-function'>Deepfake Detection Model</span> (91% Accuracy). Check the Projects section for more!",
-    
     contact: "Email: <span class='t-string'>2022100000084@seu.edu.bd</span>",
-    
     sudo: "<span class='t-error'>Permission denied: user is not in the sudoers file. This incident will be reported.</span>",
-    
     whoami: "visitor"
 };
 
@@ -242,14 +226,11 @@ if (terminalInput) {
     terminalInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             const input = this.value.trim().toLowerCase();
-            
-            // 1. Create the user's command line in history
             const historyLine = document.createElement('div');
             historyLine.className = 'terminal-line';
             historyLine.innerHTML = `<span class="t-path">visitor@nadim:~$</span> ${this.value}`;
             terminalOutput.appendChild(historyLine);
 
-            // 2. Process the command
             if (input === 'clear') {
                 terminalOutput.innerHTML = '';
             } else if (commands[input]) {
@@ -264,21 +245,14 @@ if (terminalInput) {
                 terminalOutput.appendChild(errorLine);
             }
 
-            // 3. Clear input and scroll to bottom
             this.value = '';
-            // Small timeout to ensure DOM update before scrolling
             setTimeout(() => {
                 terminalBody.scrollTop = terminalBody.scrollHeight;
             }, 10);
         }
     });
 
-    // Keep focus on input when clicking the terminal body
     terminalBody.addEventListener('click', () => {
         terminalInput.focus();
     });
 }
-
-
-
-
