@@ -237,7 +237,15 @@ body {
     transition: all 0.3s ease;
     border-radius: 2px;
 }
-
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Puts it behind everything */
+    background-color: transparent; /* Let body background show through */
+}
 /* Home Section - Two Column Layout */
 .home {
     min-height: 100vh;
@@ -803,6 +811,7 @@ section {
     gap: 3rem;
     align-items: center;
     margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 .project-preview {
@@ -1313,3 +1322,4 @@ section {
         font-size: 0.9rem;
     }
 }
+
