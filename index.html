@@ -17,7 +17,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         (function () {
@@ -29,7 +29,7 @@
 </head>
 
 <body>
-
+    <div id="particles-js"></div>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
@@ -115,7 +115,8 @@
                 These days, I mostly use Python to build Machine Learning models and backend systems.
                 My main focus right now is research—specifically using Deep Learning. I'm
                 comfortable working across the stack (HTML/JS to MongoDB),
-                but I prefer working on the logic and intelligence behind the scenes. When I'm away from the keyboard,
+                but I prefer working on the logic and intelligence behind the scenes.I also have a strong passion for creating usable, trusted datasets 
+                for the research community. When I'm away from the keyboard,
                 I'm usually watching movies or sports and I love to hang out with friends.
             </p>
         </div>
@@ -176,35 +177,64 @@
 
     <section id="projects" class="featured-project">
         <div class="container">
-            <h2 class="section-title">Featured Project</h2>
+            <h2 class="section-title">Featured Projects</h2>
+            
             <div class="project-showcase">
                 <div class="project-preview">
                     <img src="deepfake_architecture.png" alt="Deepfake Detection Model Architecture"
                         class="project-image">
                 </div>
                 <div class="project-details">
-                    <h3 class="project-title">Deepfake VS Real Image Detection Model Proposal</h3>
+                    <h3 class="project-title">Deepfake VS Real Image Detection</h3>
                     <p class="project-desc">
-                        A proposal for a deepfake VS real image detection custom lightweight CNN architecture.
+                        A research proposal for a custom lightweight CNN architecture designed to detect digital artifacts in deepfake media.
                     </p>
                     <div class="project-info-grid">
                         <div class="info-block">
                             <h4 class="info-title">The Problem</h4>
-                            <p>Deepfake images are rapidly spreading and destabilizing trust in society and social
-                                media.</p>
+                            <p>Deepfake media is rapidly destabilizing trust in social media, requiring lightweight detection tools.</p>
                         </div>
                         <div class="info-block">
                             <h4 class="info-title">The Solution</h4>
-                            <p>Proposed a custom lightweight CNN-based architecture achieving 91% accuracy in artifact
-                                detection compare to other closest models.</p>
+                            <p>Achieved 91% accuracy in artifact detection using a custom CNN model, outperforming similar lightweight architectures.</p>
                         </div>
                     </div>
                     <div class="project-tags">
                         <span class="project-tag">Python</span>
                         <span class="project-tag">TensorFlow</span>
+                        <span class="project-tag">Research</span>
                     </div>
                 </div>
             </div>
+
+            <div class="project-showcase">
+                <div class="project-preview">
+                    <img src="bsl_dataset.png" alt="Bangla Sign Language Dataset Visualization"
+                        class="project-image">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Bangla Sign Language Dataset</h3>
+                    <p class="project-desc">
+                        Creation of a <strong>usable, trusted, and ready-to-use</strong> dataset covering 40 distinct words of Bangla Sign Language to facilitate robust model training.
+                    </p>
+                    <div class="project-info-grid">
+                        <div class="info-block">
+                            <h4 class="info-title">The Gap</h4>
+                            <p>Existing datasets for Bangla Sign Language often lack diversity or reliability, hindering effective research.</p>
+                        </div>
+                        <div class="info-block">
+                            <h4 class="info-title">My Contribution</h4>
+                            <p>Curated a clean, annotated dataset of 40 words, specifically processed to be "ready-to-use" for immediate training.</p>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Data Collection</span>
+                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">Open Source</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -404,3 +434,4 @@
 
 </body>
 </html>
+
