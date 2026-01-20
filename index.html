@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Nadim-ul-Haque - Portfolio</title>
+    <meta name="description"
+        content="Final year CSE student passionate about Deep Learning and Data Analysis. Explore my projects and connect with me.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+(function () {
+    emailjs.init({
+        publicKey: "d643sEDf9emYliwTf"
+    });
+})();
+</script>
+
+
+</head>
+
+<body>
+    
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <i class="fas fa-code"></i>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#links" class="nav-link">Links</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item nav-theme-toggle">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                        <span>Theme</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="home" class="home">
+        <div class="home-content">
+            <div class="home-text">
+                <h1 class="home-title">
+                    <span class="greeting">Hi, I'm</span>
+                    <span class="name">Md. Nadim-ul-Haque</span>
+                </h1>
+                <p class="home-subtitle">Deep Learning Enthusiast</p>
+                <p class="home-description">
+                    Final year CSE student, passionate about building intelligent systems
+                    and extracting insights from data
+                </p>
+                <div class="home-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="home-visual">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                        <span class="terminal-title">research_focus.py</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line"><span class="t-keyword">class</span> <span
+                                class="t-class">Researcher</span>:</div>
+                        <div class="terminal-line indent"><span class="t-keyword">def</span> <span
+                                class="t-function">__init__</span>(<span class="t-self">self</span>):</div>
+                        <div class="terminal-line indent-2"><span class="t-self">self</span>.name = <span
+                                class="t-string">"Md. Nadim-ul-Haque"</span></div>
+                        <div class="terminal-line indent-2"><span class="t-self">self</span>.focus = [<span
+                                class="t-string">"Deep Learning"</span>, <span class="t-string">"Computer
+                                Vision"</span>]</div>
+                        <div class="terminal-line indent-2"><span class="t-self">self</span>.project = <span
+                                class="t-string">"Deepfake Detection"</span></div>
+                        <div class="terminal-line"></div>
+                        <div class="terminal-line indent"><span class="t-keyword">def</span> <span
+                                class="t-function">current_status</span>(<span class="t-self">self</span>):</div>
+                        <div class="terminal-line indent-2"><span class="t-keyword">return</span> <span
+                                class="t-string">"Ready to Collaborate"</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">
+                I'm in my final semester of Computer Science and Engineering. I started out building my foundation in C,
+                C++, and Java,
+                which taught me how software actually works.
+                These days, I mostly use Python to build Machine Learning models and backend systems.
+                My main focus right now is research—specifically using Deep Learning . I'm
+                comfortable working across the stack (HTML/JS to MongoDB),
+                but I prefer working on the logic and intelligence behind the scenes. When I'm away from the keyboard,
+                I'm usually watching movies or sports and I love to hang out with friends.
+            </p>
+
+        </div>
+    </section>
+
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills
+
+
+            </h2>
+            <div class="skills-row">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                        alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                        alt="TensorFlow">
+                    <span>Machine Learning</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                        alt="Pandas">
+                    <span>Data Analysis</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                        alt="MongoDB">
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                    <span>C/C++</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                    <span>HTML/CSS</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                    <span>PHP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="featured-project">
+        <div class="container">
+            <h2 class="section-title">Featured Project</h2>
+            <div class="project-showcase">
+                <div class="project-preview">
+                    <img src="deepfake_architecture.png" alt="Deepfake Detection Model Architecture"
+                        class="project-image">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Deepfake VS Real Image Detection Model Proposal</h3>
+                    <p class="project-desc">
+                        A proposal for a deepfake VS real image detection custom lightweight CNN architecture.
+                    </p>
+                    <div class="project-info-grid">
+                        <div class="info-block">
+                            <h4 class="info-title">The Problem</h4>
+                            <p>Deepfake images are rapidly spreading and destabilizing trust in society and social
+                                media.</p>
+                        </div>
+                        <div class="info-block">
+                            <h4 class="info-title">The Solution</h4>
+                            <p>Proposed a custom lightweight CNN-based architecture achieving 91% accuracy in artifact
+                                detection comapre to other closest models.</p>
+                        </div>
+
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="archive" class="code-archive">
+        <div class="container">
+            <h2 class="section-title">Code Archive</h2>
+            <p class="section-subtitle archive-subtitle">Selected experiments and academic works</p>
+            <div class="archive-grid">
+                <div class="archive-card">
+                    <div class="archive-card-header">
+                        <span class="folder-icon">📁</span>
+                        <a href="https://github.com/dewannadim007-create/WIP_LAB_472.2/"
+                            class="archive-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <h3>Mobile Banking Application System</h3>
+                    <p>Java-based application for managing bank transactions, utility transactions, and user records.
+                    </p>
+                    <div class="archive-tags">
+                        <span>Java</span>
+                        <span>MongoDb</span>
+                    </div>
+                </div>
+
+                <div class="archive-card">
+                    <div class="archive-card-header">
+                        <span class="folder-icon">📁</span>
+                        <a href="https://github.com/dewannadim007-create/advanced_java_project" class="archive-link"
+                            target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <h3>A Micro Blogging Application</h3>
+                    <p>A micro-blogging application built with Java and MongoDB.</p>
+                    <div class="archive-tags">
+                        <span>Java</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="archive-card">
+                    <div class="archive-card-header">
+                        <span class="folder-icon">📁</span>
+                        <a href="https://github.com/dewannadim007-create/java_project_library" class="archive-link"
+                            target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <h3>Library Management System</h3>
+                    <p>Interactive dashboard for managing library records and transactions for admin and users.</p>
+                    <div class="archive-tags">
+                        <span>Java</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="links" class="links">
+        <div class="container">
+            <h2 class="section-title">Links</h2>
+            <p class="section-subtitle">Check out my work and connect with me</p>
+            <div class="links-grid">
+                <a href="https://github.com/dewannadim007-create" class="link-card" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Check out my code repositories</p>
+                </a>
+                <a href="https://www.facebook.com/sifat.dewab" class="link-card" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook</h3>
+                    <p>Connect personnally</p>
+                </a>
+
+                <a href="https://kaggle.com/dewannadim" class="link-card" target="_blank">
+                    <i class="fab fa-kaggle"></i>
+                    <h3>Kaggle</h3>
+                    <p>View my data science work</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Feel free to reach out — I'll get back to you within 24 hours.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>2022100000084@seu.edu.bd</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+880172117946</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="from_name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="from_email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div id="form-status" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Md. Nadim-ul-Haque. All rights reserved.</p>
+            <p class="footer-note">Built with HTML, CSS & JavaScript</p>
+        </div>
+    </footer><script>
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const submitBtn = document.getElementById("submit-btn");
+    const formStatus = document.getElementById("form-status");
+    const originalHTML = submitBtn.innerHTML;
+
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
+    formStatus.style.display = "none";
+
+    
+    emailjs.sendForm(
+        "service_t11infl",
+        "template_5hioo67",
+        this,
+        {
+             publicKey: "d643sEDf9emYliwTf"
+        }
+    )
+    .then(() => {
+        
+        showSuccessMessage();
+    })
+    .catch((error) => {
+        
+        console.error("Raw Error:", error);
+
+        
+        if (error.message && (error.message.includes("Unexpected token") || error.message.includes("valid JSON"))) {
+            console.log("Caught JSON error but treating as success (False Negative).");
+            showSuccessMessage(); // Run success function anyway
+        } else {
+            formStatus.style.display = "block";
+            formStatus.style.backgroundColor = "#f8d7da";
+            formStatus.style.color = "#721c24";
+            formStatus.style.border = "1px solid #f5c6cb";
+            formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send. Please try again later.';
+        }
+    })
+    .finally(() => {
+        
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalHTML;
+    });
+
+    
+    function showSuccessMessage() {
+        formStatus.style.display = "block";
+        formStatus.style.backgroundColor = "#d4edda";
+        formStatus.style.color = "#155724";
+        formStatus.style.border = "1px solid #c3e6cb";
+        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
+        document.getElementById("contact-form").reset();
+    }
+});
+</script>
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
