@@ -17,21 +17,19 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-(function () {
-    emailjs.init({
-        publicKey: "d643sEDf9emYliwTf"
-    });
-})();
-</script>
-
-
+        (function () {
+            emailjs.init({
+                publicKey: "d643sEDf9emYliwTf"
+            });
+        })();
+    </script>
 </head>
 
 <body>
-    
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
@@ -58,7 +56,6 @@
             </div>
         </div>
     </nav>
-
 
     <section id="home" class="home">
         <div class="home-content">
@@ -87,29 +84,26 @@
                         </div>
                         <span class="terminal-title">research_focus.py</span>
                     </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line"><span class="t-keyword">class</span> <span
-                                class="t-class">Researcher</span>:</div>
-                        <div class="terminal-line indent"><span class="t-keyword">def</span> <span
-                                class="t-function">__init__</span>(<span class="t-self">self</span>):</div>
-                        <div class="terminal-line indent-2"><span class="t-self">self</span>.name = <span
-                                class="t-string">"Md. Nadim-ul-Haque"</span></div>
-                        <div class="terminal-line indent-2"><span class="t-self">self</span>.focus = [<span
-                                class="t-string">"Deep Learning"</span>, <span class="t-string">"Computer
-                                Vision"</span>]</div>
-                        <div class="terminal-line indent-2"><span class="t-self">self</span>.project = <span
-                                class="t-string">"Deepfake Detection"</span></div>
-                        <div class="terminal-line"></div>
-                        <div class="terminal-line indent"><span class="t-keyword">def</span> <span
-                                class="t-function">current_status</span>(<span class="t-self">self</span>):</div>
-                        <div class="terminal-line indent-2"><span class="t-keyword">return</span> <span
-                                class="t-string">"Ready to Collaborate"</span></div>
+                    <div class="terminal-body" id="terminal-body"
+                        onclick="document.getElementById('terminal-input').focus()">
+                        <div id="terminal-output">
+                            <div class="terminal-line">
+                                <span class="t-comment"># Welcome to Nadim's Portfolio CLI</span>
+                            </div>
+                            <div class="terminal-line">
+                                Type <span class="t-keyword">help</span> and press Enter to start.
+                            </div>
+                            <br>
+                        </div>
+                        <div class="input-line">
+                            <span class="t-path">visitor@nadim:~$</span>
+                            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+                        </div>
                     </div>
-                </div>
+                    </div>
             </div>
         </div>
     </section>
-
 
     <section id="about" class="about">
         <div class="container">
@@ -119,22 +113,17 @@
                 C++, and Java,
                 which taught me how software actually works.
                 These days, I mostly use Python to build Machine Learning models and backend systems.
-                My main focus right now is research—specifically using Deep Learning . I'm
+                My main focus right now is research—specifically using Deep Learning. I'm
                 comfortable working across the stack (HTML/JS to MongoDB),
                 but I prefer working on the logic and intelligence behind the scenes. When I'm away from the keyboard,
                 I'm usually watching movies or sports and I love to hang out with friends.
             </p>
-
         </div>
     </section>
 
-
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills
-
-
-            </h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="skills-row">
                 <div class="skill-card">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
@@ -185,7 +174,6 @@
         </div>
     </section>
 
-
     <section id="projects" class="featured-project">
         <div class="container">
             <h2 class="section-title">Featured Project</h2>
@@ -208,9 +196,8 @@
                         <div class="info-block">
                             <h4 class="info-title">The Solution</h4>
                             <p>Proposed a custom lightweight CNN-based architecture achieving 91% accuracy in artifact
-                                detection comapre to other closest models.</p>
+                                detection compare to other closest models.</p>
                         </div>
-
                     </div>
                     <div class="project-tags">
                         <span class="project-tag">Python</span>
@@ -221,7 +208,6 @@
         </div>
     </section>
 
-
     <section id="archive" class="code-archive">
         <div class="container">
             <h2 class="section-title">Code Archive</h2>
@@ -230,14 +216,13 @@
                 <div class="archive-card">
                     <div class="archive-card-header">
                         <span class="folder-icon">📁</span>
-                        <a href="https://github.com/dewannadim007-create/WIP_LAB_472.2/"
-                            class="archive-link" target="_blank">
+                        <a href="https://github.com/dewannadim007-create/WIP_LAB_472.2/" class="archive-link"
+                            target="_blank">
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
                     <h3>Mobile Banking Application System</h3>
-                    <p>Java-based application for managing bank transactions, utility transactions, and user records.
-                    </p>
+                    <p>Java-based application for managing bank transactions, utility transactions, and user records.</p>
                     <div class="archive-tags">
                         <span>Java</span>
                         <span>MongoDb</span>
@@ -279,7 +264,6 @@
         </div>
     </section>
 
-
     <section id="links" class="links">
         <div class="container">
             <h2 class="section-title">Links</h2>
@@ -293,9 +277,8 @@
                 <a href="https://www.facebook.com/sifat.dewab" class="link-card" target="_blank">
                     <i class="fab fa-facebook"></i>
                     <h3>Facebook</h3>
-                    <p>Connect personnally</p>
+                    <p>Connect personally</p>
                 </a>
-
                 <a href="https://kaggle.com/dewannadim" class="link-card" target="_blank">
                     <i class="fab fa-kaggle"></i>
                     <h3>Kaggle</h3>
@@ -304,7 +287,6 @@
             </div>
         </div>
     </section>
-
 
     <section id="contact" class="contact">
         <div class="container">
@@ -351,91 +333,74 @@
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane"></i>
                     </button>
-                    <div id="form-status" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;"></div>
+                    <div id="form-status" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;">
+                    </div>
                 </form>
             </div>
         </div>
     </section>
-
 
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Md. Nadim-ul-Haque. All rights reserved.</p>
             <p class="footer-note">Built with HTML, CSS & JavaScript</p>
         </div>
-    </footer><script>
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault();
+    </footer>
 
-    const submitBtn = document.getElementById("submit-btn");
-    const formStatus = document.getElementById("form-status");
-    const originalHTML = submitBtn.innerHTML;
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
 
-    
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
-    formStatus.style.display = "none";
+            const submitBtn = document.getElementById("submit-btn");
+            const formStatus = document.getElementById("form-status");
+            const originalHTML = submitBtn.innerHTML;
 
-    
-    emailjs.sendForm(
-        "service_t11infl",
-        "template_5hioo67",
-        this,
-        {
-             publicKey: "d643sEDf9emYliwTf"
-        }
-    )
-    .then(() => {
-        
-        showSuccessMessage();
-    })
-    .catch((error) => {
-        
-        console.error("Raw Error:", error);
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
+            formStatus.style.display = "none";
 
-        
-        if (error.message && (error.message.includes("Unexpected token") || error.message.includes("valid JSON"))) {
-            console.log("Caught JSON error but treating as success (False Negative).");
-            showSuccessMessage(); // Run success function anyway
-        } else {
-            formStatus.style.display = "block";
-            formStatus.style.backgroundColor = "#f8d7da";
-            formStatus.style.color = "#721c24";
-            formStatus.style.border = "1px solid #f5c6cb";
-            formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send. Please try again later.';
-        }
-    })
-    .finally(() => {
-        
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalHTML;
-    });
+            emailjs.sendForm(
+                "service_t11infl",
+                "template_5hioo67",
+                this,
+                {
+                    publicKey: "d643sEDf9emYliwTf"
+                }
+            )
+                .then(() => {
+                    showSuccessMessage();
+                })
+                .catch((error) => {
+                    console.error("Raw Error:", error);
 
-    
-    function showSuccessMessage() {
-        formStatus.style.display = "block";
-        formStatus.style.backgroundColor = "#d4edda";
-        formStatus.style.color = "#155724";
-        formStatus.style.border = "1px solid #c3e6cb";
-        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
-        document.getElementById("contact-form").reset();
-    }
-});
-</script>
+                    if (error.message && (error.message.includes("Unexpected token") || error.message.includes("valid JSON"))) {
+                        console.log("Caught JSON error but treating as success (False Negative).");
+                        showSuccessMessage();
+                    } else {
+                        formStatus.style.display = "block";
+                        formStatus.style.backgroundColor = "#f8d7da";
+                        formStatus.style.color = "#721c24";
+                        formStatus.style.border = "1px solid #f5c6cb";
+                        formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send. Please try again later.';
+                    }
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHTML;
+                });
 
-</script>
+            function showSuccessMessage() {
+                formStatus.style.display = "block";
+                formStatus.style.backgroundColor = "#d4edda";
+                formStatus.style.color = "#155724";
+                formStatus.style.border = "1px solid #c3e6cb";
+                formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
+                document.getElementById("contact-form").reset();
+            }
+        });
+    </script>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
