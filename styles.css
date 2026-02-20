@@ -1142,8 +1142,8 @@ section {
         left: -100%;
         top: 54px;
         flex-direction: column;
-        background: var(--navbar-bg);
-        backdrop-filter: blur(12px);
+        background: var(--bg-primary);
+        backdrop-filter: none;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -1194,6 +1194,10 @@ section {
 
     .theme-toggle:hover {
         background: var(--bg-secondary);
+    }
+
+    .container {
+        padding: 0 20px;
     }
 
     .home {
@@ -1250,6 +1254,7 @@ section {
     .project-showcase {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 1.25rem;
     }
 
     .project-info-grid {
@@ -1266,7 +1271,15 @@ section {
     }
 
     .skills-row {
-        justify-content: center;
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skill-card {
+        padding: 1rem;
+        min-width: 0;
+        width: 100%;
     }
 
     section {
@@ -1291,8 +1304,27 @@ section {
         font-size: 1.1rem;
     }
 
+    .home-buttons {
+        gap: 1rem;
+    }
+
     .btn {
         padding: 0.75rem 1.25rem;
         font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .terminal-body {
+        font-size: 0.75rem;
+        padding: 10px;
+    }
+    
+    .t-path {
+        margin-right: 5px;
+    }
+    
+    .project-title {
+        font-size: 1.25rem;
     }
 }
