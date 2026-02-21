@@ -53,7 +53,7 @@ If you want to poke around the code or use it as inspiration:
 
 I'm always open to discussing Deep Learning, research collaborations, or just tech in general.
 
-* **Email:** 2022100000084@seu.edu.bd
+* **Email:**nadimdewan789@gmail.com
 * **Location:** Dhaka, Bangladesh
 
 ---
