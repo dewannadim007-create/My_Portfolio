@@ -77,15 +77,17 @@
     const navMenu = document.getElementById('nav-menu');
     if (!hamburger || !navMenu) return;
 
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+    const hamburgerInput = hamburger.querySelector('input');
+    if (!hamburgerInput) return;
+
+    hamburgerInput.addEventListener('change', () => {
+        navMenu.classList.toggle('active', hamburgerInput.checked);
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
+            hamburgerInput.checked = false;
         });
     });
 })();
