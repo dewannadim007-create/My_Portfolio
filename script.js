@@ -187,7 +187,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (!terminalInput || !terminalOutput || !terminalBody) return;
 
     const commands = {
-        help: "Available commands: <span class='t-keyword'>about</span>, <span class='t-keyword'>skills</span>, <span class='t-keyword'>projects</span>, <span class='t-keyword'>contact</span>, <span class='t-keyword'>clear</span>",
+        help: "Available commands: <span class='t-keyword'>about</span>, <span class='t-keyword'>skills</span>, <span class='t-keyword'>projects</span>, <span class='t-keyword'>contact</span>, <span class='t-keyword'>theme [dark/light]</span>, <span class='t-keyword'>clear</span>",
         about: "Final year CSE student. Passionate about <span class='t-string'>Deep Learning</span> and creating <span class='t-function'>Trusted Datasets</span> for research.",
         skills: "['Python', 'TensorFlow', 'Java', 'MySQL', 'MongoDB', 'Data Analysis','C/C++', 'php','HTML/CSS','js']",
         projects: "Featured: <span class='t-function'>Deepfake Detection Model</span> (91% Accuracy). Check the Projects section for more!",
@@ -205,8 +205,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         historyLine.innerHTML = `<span class="t-path">visitor@nadim:~$</span> ${this.value}`;
         terminalOutput.appendChild(historyLine);
 
+        const [cmd, arg] = input.split(' ');
+
         if (input === 'clear') {
             terminalOutput.innerHTML = '';
+        } else if (cmd === 'theme' && (arg === 'dark' || arg === 'light')) {
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('theme-toggle');
+            if (arg === 'dark') {
+                html.setAttribute('data-theme', 'dark');
+                if (themeToggle) themeToggle.checked = true;
+            } else {
+                html.removeAttribute('data-theme');
+                if (themeToggle) themeToggle.checked = false;
+            }
+            try { localStorage.setItem('theme', arg); } catch (e) {}
+
+            const themeLine = document.createElement('div');
+            themeLine.className = 'terminal-line indent';
+            themeLine.innerHTML = `Theme set to <span class='t-string'>${arg}</span>.`;
+            terminalOutput.appendChild(themeLine);
+        } else if (cmd === 'theme') {
+            const errLine = document.createElement('div');
+            errLine.className = 'terminal-line';
+            errLine.innerHTML = `<span class="t-error">Usage: theme dark | theme light</span>`;
+            terminalOutput.appendChild(errLine);
         } else if (commands[input]) {
             const responseLine = document.createElement('div');
             responseLine.className = 'terminal-line indent';
