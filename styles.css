@@ -196,8 +196,8 @@ body {
     font-size: 17px;
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 32px;
+    width: 75px;
+    height: 40px;
 }
 
 .switch input {
@@ -221,9 +221,9 @@ body {
 .slider:before {
     position: absolute;
     content: "";
-    height: 28px;
-    width: 28px;
-    border-radius: 28px;
+    height: 36px;
+    width: 36px;
+    border-radius: 36px;
     left: 2px;
     bottom: 2px;
     z-index: 2;
@@ -233,21 +233,21 @@ body {
 
 .sun svg {
     position: absolute;
-    top: 6px;
-    left: 33px;
+    top: 7px;
+    left: 42px;
     z-index: 1;
-    width: 23px;
-    height: 23px;
+    width: 28px;
+    height: 28px;
 }
 
 .moon svg {
     fill: #73C0FC;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 6px;
+    left: 6px;
     z-index: 1;
-    width: 23px;
-    height: 23px;
+    width: 28px;
+    height: 28px;
 }
 
 .sun svg {
@@ -279,7 +279,7 @@ body {
 }
 
 .input:checked + .slider:before {
-    transform: translateX(28px);
+    transform: translateX(35px);
 }
 
 .hamburger {
