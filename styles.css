@@ -185,6 +185,10 @@ body {
     width: 100%;
 }
 
+/* =========================
+   Theme toggle
+   ========================= */
+
 .nav-theme-toggle {
     display: flex;
     align-items: center;
@@ -193,93 +197,137 @@ body {
 }
 
 .switch {
-    font-size: 17px;
     position: relative;
     display: inline-block;
-    width: 75px;
-    height: 40px;
+    width: 64px;
+    height: 34px;
+    flex-shrink: 0;
 }
 
 .switch input {
+    position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
 
+/* Toggle background */
 .slider {
     position: absolute;
+    inset: 0;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #73C0FC;
-    transition: .4s;
-    border-radius: 30px;
+    border-radius: 999px;
+
+    background: #e8edf2;
+    border: 1px solid #d5dce3;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.slider:before {
-    position: absolute;
+/* Sliding knob */
+.slider::before {
     content: "";
-    height: 36px;
-    width: 36px;
-    border-radius: 36px;
+    position: absolute;
+
+    width: 28px;
+    height: 28px;
+
     left: 2px;
-    bottom: 2px;
+    top: 2px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.18);
+
+    z-index: 3;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Sun */
+.sun svg {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+
+    right: 8px;
+    top: 8px;
+
     z-index: 2;
-    background-color: #e8e8e8;
-    transition: .4s;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
-.sun svg {
-    position: absolute;
-    top: 7px;
-    left: 42px;
-    z-index: 1;
-    width: 28px;
-    height: 28px;
-}
-
+/* Moon */
 .moon svg {
-    fill: #73C0FC;
     position: absolute;
-    top: 6px;
-    left: 6px;
-    z-index: 1;
-    width: 28px;
-    height: 28px;
+    width: 17px;
+    height: 17px;
+
+    left: 8px;
+    top: 8px;
+
+    z-index: 2;
+
+    fill: #52606d;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
-.sun svg {
-    animation: rotate 15s linear infinite;
+/* -------------------------
+   LIGHT MODE
+   ------------------------- */
+
+.switch:not(:has(input:checked)) .sun svg {
+    opacity: 1;
 }
 
-@keyframes rotate {
-    0% { transform: rotate(0); }
-    100% { transform: rotate(360deg); }
+.switch:not(:has(input:checked)) .moon svg {
+    opacity: 0;
 }
 
-.moon svg {
-    animation: tilt 5s linear infinite;
-}
-
-@keyframes tilt {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    75% { transform: rotate(10deg); }
-    100% { transform: rotate(0deg); }
-}
+/* -------------------------
+   DARK MODE
+   ------------------------- */
 
 .input:checked + .slider {
-    background-color: #183153;
+    background: #26364a;
+    border-color: #344a63;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-.input:focus + .slider {
-    box-shadow: 0 0 1px #183153;
+.input:checked + .slider::before {
+    transform: translateX(30px);
+    background: #f4f6f8;
 }
 
-.input:checked + .slider:before {
-    transform: translateX(35px);
+.switch:has(input:checked) .sun svg {
+    opacity: 0;
+}
+
+.switch:has(input:checked) .moon svg {
+    opacity: 1;
+    fill: #73c0fc;
+}
+
+/* Focus */
+.input:focus-visible + .slider {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
 }
 
 .hamburger {
