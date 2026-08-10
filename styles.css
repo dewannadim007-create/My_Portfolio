@@ -185,9 +185,6 @@ body {
     width: 100%;
 }
 
-/* =========================
-   Theme toggle
-   ========================= */
 
 .nav-theme-toggle {
     display: flex;
@@ -211,7 +208,6 @@ body {
     height: 0;
 }
 
-/* Toggle background */
 .slider {
     position: absolute;
     inset: 0;
@@ -221,111 +217,84 @@ body {
     background: #e8edf2;
     border: 1px solid #d5dce3;
 
-    transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
-/* Sliding knob */
 .slider::before {
     content: "";
     position: absolute;
 
     width: 28px;
     height: 28px;
-
     left: 2px;
     top: 2px;
 
     border-radius: 50%;
-
     background: #ffffff;
 
-    box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 
     z-index: 3;
 
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-/* Sun */
-.sun svg {
+/* ICONS */
+.sun,
+.moon {
     position: absolute;
     width: 18px;
     height: 18px;
-
-    right: 8px;
     top: 8px;
 
     z-index: 2;
 
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+    transition: opacity 0.25s ease;
 }
 
-/* Moon */
+.sun {
+    right: 8px;
+    opacity: 1;
+}
+
+.sun svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.moon {
+    left: 8px;
+    opacity: 0;
+}
+
 .moon svg {
-    position: absolute;
     width: 17px;
     height: 17px;
-
-    left: 8px;
-    top: 8px;
-
-    z-index: 2;
-
-    fill: #52606d;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-}
-
-/* -------------------------
-   LIGHT MODE
-   ------------------------- */
-
-.switch:not(:has(input:checked)) .sun svg {
-    opacity: 1;
-}
-
-.switch:not(:has(input:checked)) .moon svg {
-    opacity: 0;
-}
-
-/* -------------------------
-   DARK MODE
-   ------------------------- */
-
-.input:checked + .slider {
-    background: #26364a;
-    border-color: #344a63;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-}
-
-.input:checked + .slider::before {
-    transform: translateX(30px);
-    background: #f4f6f8;
-}
-
-.switch:has(input:checked) .sun svg {
-    opacity: 0;
-}
-
-.switch:has(input:checked) .moon svg {
-    opacity: 1;
+    display: block;
     fill: #73c0fc;
 }
 
+/* DARK MODE */
+.input:checked ~ .slider {
+    background: #26364a;
+    border-color: #344a63;
+}
+
+.input:checked ~ .slider::before {
+    transform: translateX(30px);
+}
+
+.input:checked ~ .sun {
+    opacity: 0;
+}
+
+.input:checked ~ .moon {
+    opacity: 1;
+}
+
 /* Focus */
-.input:focus-visible + .slider {
+.input:focus-visible ~ .slider {
     outline: 2px solid var(--primary-color);
     outline-offset: 3px;
 }
