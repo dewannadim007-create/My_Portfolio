@@ -185,7 +185,6 @@ body {
     width: 100%;
 }
 
-
 .nav-theme-toggle {
     display: flex;
     align-items: center;
@@ -213,42 +212,34 @@ body {
     inset: 0;
     cursor: pointer;
     border-radius: 999px;
-
     background: #e8edf2;
     border: 1px solid #d5dce3;
-
     transition: 0.3s ease;
 }
 
 .slider::before {
     content: "";
     position: absolute;
-
     width: 28px;
     height: 28px;
     left: 2px;
     top: 2px;
-
     border-radius: 50%;
     background: #ffffff;
-
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
-
     z-index: 3;
-
     transition: transform 0.3s ease;
 }
 
 /* ICONS */
+
 .sun,
 .moon {
     position: absolute;
     width: 18px;
     height: 18px;
     top: 8px;
-
     z-index: 2;
-
     transition: opacity 0.25s ease;
 }
 
@@ -276,6 +267,7 @@ body {
 }
 
 /* DARK MODE */
+
 .input:checked ~ .slider {
     background: #26364a;
     border-color: #344a63;
@@ -294,6 +286,7 @@ body {
 }
 
 /* Focus */
+
 .input:focus-visible ~ .slider {
     outline: 2px solid var(--primary-color);
     outline-offset: 3px;
@@ -342,33 +335,64 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 999; 
-    background-color: transparent; 
+    z-index: 999;
+    background-color: transparent;
     pointer-events: none;
 }
 
 #particles-js canvas {
     display: block;
 }
+
+
+/* =========================================================
+   PROJECT DOI
+   ========================================================= */
+
 .project-doi {
-    margin-top: 18px;
-    font-size: 0.9rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.85rem;
 }
 
 .doi-label {
+    color: var(--text-secondary);
     font-weight: 600;
-    margin-right: 6px;
+    white-space: nowrap;
 }
 
 .project-doi a {
-    color: var(--accent-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary-color);
     text-decoration: none;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.project-doi a::before {
+    content: '\f0c1';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.75rem;
 }
 
 .project-doi a:hover {
-    text-decoration: underline;
+    color: var(--accent-color);
+    transform: translateX(2px);
+    text-decoration: none;
 }
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
 .home {
     min-height: 100vh;
     display: flex;
@@ -534,13 +558,16 @@ body {
 .terminal-body::-webkit-scrollbar {
     width: 6px;
 }
+
 .terminal-body::-webkit-scrollbar-thumb {
-    background: #444; 
+    background: #444;
     border-radius: 3px;
 }
+
 .terminal-body::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
 }
+
 .terminal-body::-webkit-scrollbar-track {
     background: #1e1e1e;
 }
@@ -608,12 +635,13 @@ body {
     font-size: 0.9rem;
     flex-grow: 1;
     outline: none;
-    caret-color: #4ade80; 
+    caret-color: #4ade80;
 }
 
 .terminal-window:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(80, 70, 229, 0.15);
+    box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(80, 70, 229, 0.15);
 }
 
 @keyframes terminalFloat {
@@ -685,8 +713,8 @@ body {
     margin-bottom: 2.5rem;
     line-height: 1.8;
     max-width: 600px;
-    margin-left: auto;  
-    margin-right: auto; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .home-buttons {
@@ -843,7 +871,8 @@ section {
 .skill-card:hover {
     border-color: var(--primary-color);
     transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 15px 30px var(--shadow), 0 0 20px rgba(80, 70, 229, 0.2);
+    box-shadow: 0 15px 30px var(--shadow),
+                0 0 20px rgba(80, 70, 229, 0.2);
 }
 
 .skill-card::before {
@@ -1248,7 +1277,13 @@ section {
     opacity: 0.7;
 }
 
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 768px) {
+
     .hamburger {
         display: block;
         order: 3;
@@ -1413,7 +1448,22 @@ section {
     }
 }
 
+
+/* DOI MOBILE */
+
 @media (max-width: 480px) {
+
+    .project-doi {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .project-doi a {
+        font-size: 0.8rem;
+        word-break: break-all;
+    }
+
     .home-title {
         font-size: 1.85rem;
     }
@@ -1436,16 +1486,16 @@ section {
         width: 100%;
         justify-content: center;
     }
-    
+
     .terminal-body {
         font-size: 0.75rem;
         padding: 10px;
     }
-    
+
     .t-path {
         margin-right: 5px;
     }
-    
+
     .project-title {
         font-size: 1.25rem;
     }
