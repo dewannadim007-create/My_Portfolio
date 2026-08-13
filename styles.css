@@ -350,7 +350,25 @@ body {
 #particles-js canvas {
     display: block;
 }
+.project-doi {
+    margin-top: 18px;
+    font-size: 0.9rem;
+}
 
+.doi-label {
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.project-doi a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-doi a:hover {
+    text-decoration: underline;
+}
 .home {
     min-height: 100vh;
     display: flex;
