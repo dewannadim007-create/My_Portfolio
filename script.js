@@ -115,25 +115,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ---------- Active nav link on scroll ----------
 (function () {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const navLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
     if (!sections.length || !navLinks.length) return;
 
-    function highlightNavLink() {
-        let current = '';
-        const scrollPosition = window.pageYOffset + 150;
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
+    function setActiveById(id) {
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            link.classList.toggle('active', href === `#${id}`);
+            if (href === `#${id}`) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
             }
         });
-        navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-        });
     }
-    window.addEventListener('scroll', highlightNavLink);
+
+    function highlightNavLink() {
+        const viewportMid = window.scrollY + (window.innerHeight * 0.35);
+        let currentId = sections[0].id;
+
+        for (const section of sections) {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+            if (viewportMid >= top && viewportMid < bottom) {
+                currentId = section.id;
+                break;
+            }
+            if (viewportMid >= bottom) {
+                currentId = section.id;
+            }
+        }
+
+        setActiveById(currentId);
+    }
+
+    window.addEventListener('scroll', highlightNavLink, { passive: true });
+    window.addEventListener('resize', highlightNavLink);
+    window.addEventListener('load', highlightNavLink);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const targetId = link.getAttribute('href')?.slice(1);
+            if (targetId) setActiveById(targetId);
+        });
+    });
+
+    highlightNavLink();
 })();
 
 // ---------- Scroll-reveal animations ----------
@@ -189,7 +217,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (!terminalInput || !terminalOutput || !terminalBody) return;
 
     const commands = {
-        help: "Available commands: <span class='t-keyword'>about</span>, <span class='t-keyword'>skills</span>, <span class='t-keyword'>projects</span>, <span class='t-keyword'>contact</span>, <span class='t-keyword'>theme</span>, <span class='t-keyword'>clear</span>",
+        help: "Available commands: <span class='t-keyword'>about</span>, <span class='t-keyword'>skills</span>, <span class='t-keyword'>projects</span>, <span class='t-keyword'>contact</span>, <span class='t-keyword'>theme</span>, <span class='t-keyword'>clear</span>, <span class='t-keyword'>whoami</span>",
         about: "Final year CSE student. Passionate about <span class='t-string'>Deep Learning</span> and creating <span class='t-function'>Trusted Datasets</span> for research.",
         skills: "['Python', 'TensorFlow', 'Java', 'MySQL', 'MongoDB', 'Data Analysis','C/C++', 'php','HTML/CSS','js']",
         projects: "Featured: <span class='t-function'>Deepfake Detection Model</span> (91% Accuracy). Check the Projects section for more!",
