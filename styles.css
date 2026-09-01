@@ -25,12 +25,15 @@
     --nav-active-bg: rgba(44, 95, 83, 0.14);
     --nav-active-shadow: rgba(44, 95, 83, 0.25);
     --nav-underline-color: #1f4d43;
+
+    /* LIGHT THEME NAV HOVER */
     --nav-hover-gradient: linear-gradient(
-    120deg,
-    rgba(44, 95, 83, 0.16) 0%,
-    rgba(74, 130, 115, 0.24) 50%,
-    rgba(44, 95, 83, 0.16) 100%
-);}
+        135deg,
+        rgba(34, 84, 70, 0.08) 0%,
+        rgba(47, 110, 91, 0.16) 50%,
+        rgba(34, 84, 70, 0.08) 100%
+    );
+}
 
 [data-theme="dark"] {
     --bg-primary: #1a1a1f;
@@ -48,7 +51,14 @@
     --nav-active-bg: rgba(124, 231, 204, 0.2);
     --nav-active-shadow: rgba(124, 231, 204, 0.28);
     --nav-underline-color: #7ce7cc;
-    --nav-hover-gradient: linear-gradient(120deg, rgba(124, 231, 204, 0.34) 0%, rgba(56, 189, 248, 0.28) 50%, rgba(124, 231, 204, 0.34) 100%);
+
+    /* DARK THEME NAV HOVER */
+    --nav-hover-gradient: linear-gradient(
+        135deg,
+        rgba(124, 231, 204, 0.10) 0%,
+        rgba(56, 189, 248, 0.14) 50%,
+        rgba(124, 231, 204, 0.10) 100%
+    );
 }
 
 html {
@@ -181,7 +191,17 @@ body {
     font-size: 0.9rem;
     padding: 0.5rem 0.875rem;
     border-radius: 8px;
-    transition: color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+
+    /* Prevent layout shift when hover border appears */
+    border: 1px solid transparent;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+
     display: block;
     position: relative;
     overflow: hidden;
@@ -197,8 +217,17 @@ body {
     background-size: 220% 100%;
     background-position: -120% 0;
     opacity: 0;
-    transition: background-position 0.35s ease, opacity 0.25s ease;
+
+    transition:
+        background-position 0.35s ease,
+        opacity 0.25s ease;
+
     z-index: -1;
+
+    /* Subtle glass bevel */
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.55),
+        inset 0 -1px 1px rgba(31, 77, 67, 0.10);
 }
 
 .nav-link::after {
@@ -215,9 +244,20 @@ body {
     transition: transform 0.28s ease;
 }
 
+/* LIGHT THEME HOVER */
 .nav-link:hover {
     color: var(--text-primary);
-    background: var(--bg-secondary);
+
+    background: rgba(44, 95, 83, 0.08);
+
+    backdrop-filter: blur(10px) saturate(135%);
+    -webkit-backdrop-filter: blur(10px) saturate(135%);
+
+    border-color: rgba(44, 95, 83, 0.15);
+
+    box-shadow:
+        0 4px 14px rgba(44, 95, 83, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .nav-link:hover::before {
@@ -229,11 +269,21 @@ body {
     transform: scaleX(1);
 }
 
+/* ACTIVE NAVIGATION ITEM */
 .nav-link.active {
     color: var(--nav-active-color);
     background: var(--nav-active-bg);
     font-weight: 600;
-    box-shadow: 0 0 0 1px var(--nav-active-shadow), 0 8px 20px -14px var(--nav-active-shadow);
+
+    border-color: var(--nav-active-shadow);
+
+    backdrop-filter: blur(10px) saturate(135%);
+    -webkit-backdrop-filter: blur(10px) saturate(135%);
+
+    box-shadow:
+        0 0 0 1px var(--nav-active-shadow),
+        0 8px 20px -14px var(--nav-active-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 .nav-link.active::before {
@@ -251,8 +301,37 @@ body {
     transform: none;
 }
 
+/* DARK MODE ACTIVE */
 [data-theme="dark"] .nav-link.active {
-    box-shadow: 0 0 0 1px var(--nav-active-shadow), 0 0 18px rgba(124, 231, 204, 0.4);
+    box-shadow:
+        0 0 0 1px var(--nav-active-shadow),
+        0 0 18px rgba(124, 231, 204, 0.4),
+        0 10px 24px rgba(124, 231, 204, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* DARK MODE GLASS HOVER + DOWNWARD LIGHT BLEED */
+[data-theme="dark"] .nav-link:hover {
+    color: var(--nav-active-color);
+
+    background: rgba(124, 231, 204, 0.08);
+
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+
+    border-color: rgba(124, 231, 204, 0.20);
+
+    box-shadow:
+        0 4px 12px rgba(124, 231, 204, 0.12),
+        0 10px 25px rgba(124, 231, 204, 0.10),
+        0 18px 35px rgba(56, 189, 248, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .nav-link::before {
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.12),
+        inset 0 -1px 1px rgba(124, 231, 204, 0.08);
 }
 
 .nav-theme-toggle {
@@ -1419,7 +1498,16 @@ section {
         font-size: 0.9rem;
         padding: 0.6rem 1rem;
         border-radius: 999px;
-        transition: color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+
+        /* Prevent layout shift */
+        border: 1px solid transparent;
+
+        transition:
+            color 0.25s ease,
+            background-color 0.25s ease,
+            box-shadow 0.25s ease,
+            border-color 0.25s ease;
+
         display: block;
         margin: 0 auto;
         max-width: 240px;
@@ -1431,13 +1519,41 @@ section {
 
     .nav-link:hover {
         color: var(--text-primary);
-        background: var(--bg-secondary);
+
+        background: var(--nav-hover-gradient);
+
+        backdrop-filter: blur(10px) saturate(135%);
+        -webkit-backdrop-filter: blur(10px) saturate(135%);
+
+        border-color: rgba(44, 95, 83, 0.14);
+
+        box-shadow:
+            0 5px 15px rgba(44, 95, 83, 0.10),
+            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
+
+    [data-theme="dark"] .nav-link:hover {
+        color: var(--nav-active-color);
+
+        background: var(--nav-hover-gradient);
+
+        border-color: rgba(124, 231, 204, 0.18);
+
+        box-shadow:
+            0 5px 15px rgba(124, 231, 204, 0.10),
+            0 12px 25px rgba(124, 231, 204, 0.07),
+            inset 0 1px 0 rgba(255, 255, 255, 0.10);
     }
 
     .nav-link.active {
         color: var(--nav-active-color);
         background: var(--nav-active-bg);
-        box-shadow: 0 10px 24px -16px var(--nav-active-shadow), 0 0 0 1px var(--nav-active-shadow);
+
+        box-shadow:
+            0 10px 24px -16px var(--nav-active-shadow),
+            0 0 0 1px var(--nav-active-shadow);
+
+        transform: none;
     }
 
     .container {
