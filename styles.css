@@ -21,6 +21,9 @@
     --glow-color: rgba(44, 95, 83, 0.12);
     --highlight-warm: #fef3e2;
     --highlight-cool: #eef2ff;
+    --nav-active-color: #1f4d43;
+    --nav-active-bg: rgba(44, 95, 83, 0.14);
+    --nav-active-shadow: rgba(44, 95, 83, 0.25);
 }
 
 [data-theme="dark"] {
@@ -35,6 +38,9 @@
     --glow-color: rgba(139, 92, 246, 0.15);
     --highlight-warm: #2a2520;
     --highlight-cool: #1e1e2e;
+    --nav-active-color: #7ce7cc;
+    --nav-active-bg: rgba(124, 231, 204, 0.2);
+    --nav-active-shadow: rgba(124, 231, 204, 0.28);
 }
 
 html {
@@ -167,7 +173,7 @@ body {
     font-size: 0.9rem;
     padding: 0.5rem 0.875rem;
     border-radius: 8px;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     display: block;
 }
 
@@ -177,12 +183,16 @@ body {
 }
 
 .nav-link.active {
-    color: var(--primary-color);
+    color: var(--nav-active-color);
+    background: var(--nav-active-bg);
     font-weight: 600;
+    box-shadow: inset 0 -2px 0 currentColor, 0 0 0 1px var(--nav-active-shadow);
 }
 
-.nav-link.active::after {
-    width: 100%;
+.nav-link.active:hover {
+    color: var(--nav-active-color);
+    background: var(--nav-active-bg);
+    transform: none;
 }
 
 .nav-theme-toggle {
@@ -1357,32 +1367,6 @@ section {
 .nav-link:hover {
     color: var(--text-primary);
     background: var(--bg-secondary);
-}
-
-/* Active state (light mode default) */
-.nav-link.active {
-    color: var(--primary-color); /* #2c5f53 */
-    background: rgba(44, 95, 83, 0.08);
-    font-weight: 600;
-    box-shadow: inset 0 -2px 0 var(--primary-color);
-}
-
-/* Active state in dark mode */
-[data-theme="dark"] .nav-link.active {
-    color: #5ecfb1;
-    background: rgba(94, 207, 177, 0.15);
-    box-shadow: inset 0 -2px 0 #5ecfb1;
-}
-
-/* Optional: keep active style on hover too */
-.nav-link.active:hover {
-    color: var(--primary-color);
-    background: rgba(44, 95, 83, 0.12);
-}
-
-[data-theme="dark"] .nav-link.active:hover {
-    color: #5ecfb1;
-    background: rgba(94, 207, 177, 0.2);
 }
 
     .container {
